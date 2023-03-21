@@ -1,0 +1,59 @@
+% LaTeX file for Chapter 01
+<<'preambleA1',include=FALSE>>=
+library(knitr)
+opts_chunk$set(
+    fig.path='figure/cha1_fig', 
+    self.contained=FALSE,
+    cache=TRUE
+)
+
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Approximate likelihood}\label{sec:approxlikelihood}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Since real-life data is always observed in intervals $\boldsymbol{D}=(\underline{y},\overline{y}]$ and is never exact (although treated as if), the likelihood contribution of one observation is:
+\begin{align*}
+l(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D})=\bfP(\underline{y}< Y\leq \overline{y}|\boldsymbol{X}=\boldsymbol{x})=F_Z\left(h_Y(\overline{y}|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)-F_Z\left(h_Y(\underline{y}|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)
+\end{align*}
+which is the exact likelihood as originally introduced by Fisher. The approximated likelihood for a continuous response is obtained by making the interval around the "observed" value $y$ negligibly small $\boldsymbol{D}=(y-\epsilon,y+\epsilon]$ and thus the likelihood is approximated as
+\begin{align*}
+l(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D})&=F_Z\left(h_Y(y+\epsilon|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)-F_Z\left(h_Y(y-\epsilon|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)\\
+&=\int_{y-\epsilon}^{y+\epsilon}F_Z'\left(h_Y(u|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)h_Y'(u|\boldsymbol{\theta})du\\
+&\approx f_Z\left(h_Y(y|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)h_Y'(y|\boldsymbol{\theta})\cdot 2\epsilon\\
+&\propto f_Z\left(h_Y(y|\boldsymbol{\theta})-\boldsymbol{\tilde{x}}\boldsymbol{\beta_\tram}\right)h_Y'(y|\boldsymbol{\theta})
+\end{align*}
+The joint likelihood for several observations assuming independence is:
+\begin{align*}
+L(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D_1,...,D_N})=\prod_{i=1}^N l(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D_i})
+\end{align*}
+where it is theoretically and computationally convenient to operate on the log scale
+\begin{align*}
+\ell(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D_1,...,D_N})=\sum_{i=1}^N \log\left(l(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D_i})\right)
+\end{align*}
+The resulting maximum log-likelihood estimator is then:
+\begin{align*}
+\boldsymbol{\hat{\beta}_\tram,\hat\theta}=\argmax \ell(\boldsymbol{\beta_\tram,\theta}|\boldsymbol{D_1,...,D_N})
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Computational reproducibility}\label{sec:repro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newpage
+<<>>=
+sessionInfo()
+@
+
+

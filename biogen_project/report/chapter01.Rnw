@@ -1,0 +1,17 @@
+% LaTeX file for Chapter 01
+<<'preamble01',include=FALSE,cache=FALSE>>=
+library(knitr)
+opts_chunk$set(
+    fig.path='figure/ch01_fig', 
+    self.contained=FALSE,
+    cache=TRUE,
+    dev = "pdf" # reduced size when "png" !
+)
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Multiple linear regression techniques are well-established and easy-interpretable statistical tools that can incorporate many explanatory variables associated with one outcome variable. Many explanatory variables increase the chance of collinearity, which means that one of them is well explained by a linear combination of others. It is well known that collinearity has detrimental impacts on multiple linear regression estimands.
+

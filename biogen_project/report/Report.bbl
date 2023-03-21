@@ -1,0 +1,20 @@
+\begin{thebibliography}{}
+
+\bibitem[Hernan and Robins, 2023]{hernan2023}
+Hernan, M. and Robins, J. (2023).
+\newblock {\em Causal Inference}.
+\newblock Chapman \& Hall/CRC Monographs on Statistics \& Applied Probab. CRC
+  Press.
+
+\bibitem[Hothorn, 2020]{Hothorn2020}
+Hothorn, T. (2020).
+\newblock Most likely transformations: The mlt package.
+\newblock {\em Journal of Statistical Software}, {\bf92},
+  \url{https://doi.org/10.18637/jss.v092.i01}.
+
+\bibitem[Hothorn {\it et~al.}, 2017]{Hothorn2017}
+Hothorn, T., M\"{o}st, L., and B\"{u}hlmann, P. (2017).
+\newblock Most likely transformations.
+\newblock {\em Scandinavian Journal of Statistics}, {\bf45},  110--134.
+
+\end{thebibliography}
